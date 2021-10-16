@@ -93,6 +93,7 @@ async def status_message_f( client, message):
                 msg += f"\n<b>➩ETA:</b> {file.eta_string()}"
                 msg += f"\n{msgg}"
                 msg += f"\n<b>➩GID </b><code>/cancel {file.gid}</code>"
+                msg += f"<b> ➖➖➖➖➖➖ </b>\n"
                 msg += "\n\n"
 
         hr, mi, se = up_time(time.time() - BOT_START_TIME)
