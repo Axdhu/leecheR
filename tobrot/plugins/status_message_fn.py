@@ -48,9 +48,8 @@ async def upload_as_video(client, message):
     await message.reply_text("**🗞 Your Files Will Be Uploaded As Streamable 🎞**")
  
 
-async def status_message_f(
-    client, message
-):  # weird code but 'This is the way' @gautamajay52
+async def status_message_f( client, message): 
+    # weird code but 'This is the way' 
     aria_i_p = await aria_start()
     # Show All Downloads
     to_edit = await message.reply(".......")
@@ -65,7 +64,7 @@ async def status_message_f(
                 gid_dict[chat_id].pop()
                 gid_dict[chat_id].append(mess_id)
 
-    prev_mess = "By gautamajay52"
+    prev_mess = " Axdhu "
     await message.delete()
     while True:
         downloads = aria_i_p.get_downloads()
@@ -85,15 +84,21 @@ async def status_message_f(
 
                 percentage = int(file.progress_string(0).split('%')[0])
                 prog = "[{0}{1}]".format("".join([FINISHED_PROGRESS_STR for i in range(math.floor(percentage / 5))]),"".join([UN_FINISHED_PROGRESS_STR for i in range(20 - math.floor(percentage / 5))]))
-                msg += f"<b>════════════════════════════════</b>\n"
+                msg += f"<b> ×͜× Axdhu 📥 </b>\n"
+                msg += " | "
                 msg += f"\n<b>{downloading_dir_name}</b>"
+                msg += " | "
                 msg += f"\n<b>{prog}</b>"
-                msg += f"\n<b>Speed</b>: {file.download_speed_string()}"
-                msg += f"\n<b>Status</b>: {file.progress_string()} <b>of</b> {file.total_length_string()}"
+                msg += " | "
+                msg += f"\n<b>Speed ⚡️ </b>: {file.download_speed_string()}"
+                msg += " | "
+                msg += f"\n<b>Status </b>: {file.progress_string()} <b>of</b> {file.total_length_string()}"
+                msg += " | "
                 msg += f"\n<b>ETA:</b> {file.eta_string()}"
+                msg += " | "
                 msg += f"\n{msgg}"
-                msg += f"\n<b>To Cancel:</b> <code>/cancel {file.gid}</code>"
-                msg += "\n"
+                msg += f"\n<code> {Commandi.CANCEL} {file.gid}</code>"
+                msg += "\n\n"
 
         hr, mi, se = up_time(time.time() - BOT_START_TIME)
         total, used, free = shutil.disk_usage(".")
