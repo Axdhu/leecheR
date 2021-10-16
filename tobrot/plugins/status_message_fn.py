@@ -84,20 +84,15 @@ async def status_message_f( client, message):
 
                 percentage = int(file.progress_string(0).split('%')[0])
                 prog = "[{0}{1}]".format("".join([FINISHED_PROGRESS_STR for i in range(math.floor(percentage / 5))]),"".join([UN_FINISHED_PROGRESS_STR for i in range(20 - math.floor(percentage / 5))]))
-                msg += f"<b> ×͜× Axdhu 📥 </b>\n"
-                msg += " | "
+                msg += f"<b> ×͜× WWM LEECH ×͜× 📥 </b>\n"
+                msg += f"<b> ➖➖➖➖➖➖ </b>\n"
                 msg += f"\n<b>{downloading_dir_name}</b>"
-                msg += " | "
                 msg += f"\n<b>{prog}</b>"
-                msg += " | "
-                msg += f"\n<b>Speed ⚡️ </b>: {file.download_speed_string()}"
-                msg += " | "
-                msg += f"\n<b>Status </b>: {file.progress_string()} <b>of</b> {file.total_length_string()}"
-                msg += " | "
-                msg += f"\n<b>ETA:</b> {file.eta_string()}"
-                msg += " | "
+                msg += f"\n<b>➩Speed ⚡️ </b>: {file.download_speed_string()}"
+                msg += f"\n<b>➩Status </b>: {file.progress_string()} <b>of</b> {file.total_length_string()}"
+                msg += f"\n<b>➩ETA:</b> {file.eta_string()}"
                 msg += f"\n{msgg}"
-                msg += f"\n<b> to cancel </b><code>/cancel {file.gid}</code>"
+                msg += f"\n<b>➩GID </b><code>/cancel {file.gid}</code>"
                 msg += "\n\n"
 
         hr, mi, se = up_time(time.time() - BOT_START_TIME)
