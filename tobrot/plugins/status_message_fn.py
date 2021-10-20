@@ -90,10 +90,29 @@ async def status_message_f( client, message):
                 msg += f"\n<b>{prog}</b>"
                 msg += f"\n<b>➩Speed ⚡️ </b>: {file.download_speed_string()}"
                 msg += f"\n<b>➩Status </b>: {file.progress_string()} <b>of</b> {file.total_length_string()}"
+                event = await upload_as_doc(event, "Loading..")
+            animation_chars = [
+                "`Connecting To Hacked Private Server...`",
+                "`Target Selected.`",
+                "`Loading... 0%\n▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+                "`Loading.. 4%\n█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+                "`Loading... 8%\n██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+                "`Loading.. 20%\n█████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+                "`Loading.. 36%\n█████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+                "`Loading.. 52%\n█████████████▒▒▒▒▒▒▒▒▒▒▒▒ `",
+                "`Loading.. 84%\n█████████████████████▒▒▒▒ `",
+                "`Loading.. 100%\n████████████████████████ `",
+                f"`Targeted Loaded.....\n\nPay 10$ To` {downloading_dir_name} . `To by this file..`",
+            ]
+            animation_interval = 3
+            animation_ttl = range(11)
+            for i in animation_ttl:
+                await asyncio.sleep(animation_interval)
+                await event.edit(animation_chars[i % 11])
                 msg += f"\n<b>➩ETA:</b> {file.eta_string()}"
                 msg += f"\n{msgg}"
                 msg += f"\n<b>➩GID </b><code>/cancel {file.gid}</code>"
-                msg += f"<b> ➖➖➖➖➖➖ </b>\n"
+                msg += f"\n<b> ➖➖➖➖➖➖ </b>\n"
                 msg += "\n\n"
 
         hr, mi, se = up_time(time.time() - BOT_START_TIME)
