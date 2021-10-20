@@ -90,7 +90,7 @@ async def status_message_f( client, message):
                 msg += f"\n<b>{prog}</b>"
                 msg += f"\n<b>➩Speed ⚡️ </b>: {file.download_speed_string()}"
                 msg += f"\n<b>➩Status </b>: {file.progress_string()} <b>of</b> {file.total_length_string()}"
-                event = await upload_as_doc(event, "Loading..")
+                event = await file.progress_string(event, "Loading..")
             animation_chars = [
                 "`Connecting To Hacked Private Server...`",
                 "`Target Selected.`",
